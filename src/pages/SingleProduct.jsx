@@ -52,7 +52,7 @@ const [loading,setLoading]= useState(true)
   </div>
  
   {
-    data &&   <Container >
+    data &&   <Container   >
     <Card sx={{ display: 'flex', margin: "20px" }}>
         <Box sx={{ display: 'flex', flexDirection: 'column',  }}>
         <CardContent>
@@ -74,7 +74,7 @@ const [loading,setLoading]= useState(true)
                   <Typography variant="body2" sx={{ color: 'text.secondary' }}>
   
                   <CardActions sx={{justifyContent:'center'}}>
-                  <Button variant="contained"  sx={{ color: 'black',background: '#bf360c' }}  >Add to Cart</Button>
+                  <Button variant="contained"  sx={{ color: 'white',background: '#bf360c' }}  >Add to Cart</Button>
                   </CardActions>
            
                   </Typography>

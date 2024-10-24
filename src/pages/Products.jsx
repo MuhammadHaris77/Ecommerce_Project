@@ -4,7 +4,6 @@ import SingleCard from '../components/Card';
 import { Container, Typography } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useNavigate } from 'react-router-dom';
-import BootCard from '../components/BootCard';
 
 
 const Products = () => {
@@ -48,9 +47,7 @@ const Products = () => {
         {products && products.map((item) => {
           return (
             <div className='m-2 d-flex d-inline-flex'>
-                 {/* <BootCard key={item.id} title={item.title} description={item.description} brand={item.brand} src={item.thumbnail} func={() => sigleProduct(item)} /> */}
-
-
+                
                  <SingleCard key={item.id} title={item.title} description={item.description} brand={item.brand} src={item.thumbnail} func={() => sigleProduct(item)} /> 
             </div>
 

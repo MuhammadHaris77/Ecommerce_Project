@@ -40,8 +40,8 @@ function ResponsiveAppBar() {
   const handleCloseNavMenu = (page) => {
     console.log("clicked item",page)
     setAnchorElNav(null);
-    page === 'login' ? navigate('/') : navigate(page)
-   };
+    page === 'login' ? navigate('/')  :  page === 'products' ?  navigate('/products') : page === 'register' ?  navigate('/register') : null 
+  };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
@@ -88,12 +88,12 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent:'center', } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={()=>handleCloseNavMenu(page)}
-                sx={{ my: 2, color: 'black', display: 'flex' }}
+                sx={{ my: 2, color: 'white', display: 'd-flex',padding:'0px 30px' }}
               >
                 {page}
               </Button>

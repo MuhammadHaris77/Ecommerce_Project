@@ -19,7 +19,7 @@ const Register = () => {
         <InputForm type="password" label="Password" />
         <br />
 
-        <Button variant="contained" sx={{ color: 'black', background: '#bf360c', width: "100px", padding: "10px", }} >Register</Button>
+        <Button variant="contained" sx={{ color: 'white', background: '#bf360c', width: "100px", padding: "10px", }} >Register</Button>
 
       </Container>
 

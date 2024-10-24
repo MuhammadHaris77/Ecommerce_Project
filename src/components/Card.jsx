@@ -32,7 +32,7 @@ export default function SingleCard({ title, description, src ,brand,category,fun
        
             </CardContent>
             <CardActions sx={{justifyContent:'center'}}>
-                <Button variant="contained"  sx={{ color: 'black',background: '#bf360c' }} onClick={func} >Show More</Button>
+                <Button variant="contained"  sx={{ color: 'white',background: '#bf360c' }} onClick={func} >Show More</Button>
             </CardActions>
         </Card>
 

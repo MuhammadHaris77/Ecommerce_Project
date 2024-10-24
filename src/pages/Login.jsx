@@ -18,7 +18,7 @@ const Login = () => {
     <InputForm type="password" label="Password"/>  
     <br />
 
-    <Button variant="contained"  sx={{ color: 'black',background: '#bf360c', width:"100px" ,padding:"10px",  }} >Login </Button>
+    <Button variant="contained"  sx={{ color: 'White',background: '#bf360c', width:"100px" ,padding:"10px",  }} >Login </Button>
 
     </Container>
    </div>
