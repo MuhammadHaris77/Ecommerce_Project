@@ -73,7 +73,7 @@ const SingleProduct = () => {
 
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
 
-                  <CardActions sx={{ justifyContent: 'center' }}>
+                  <CardActions sx={{ justifyContent: 'start' }}>
                     <Button variant="contained" sx={{ color: 'white', background: '#bf360c' }}  >Add to Cart</Button>
                   </CardActions>
 
