@@ -38,7 +38,7 @@ const Products = () => {
     <>
       <ResponsiveAppBar />
 
-      <div className='text-center p-4 '>
+      <div className='text-center p-4 '  >
         <Typography className="text-center" variant='h2' color='#bf360c'>
           ALL Products
         </Typography>
@@ -48,7 +48,7 @@ const Products = () => {
           return (
             <div className='m-2 d-flex d-inline-flex'>
                 
-                 <SingleCard key={item.id} title={item.title} description={item.description} brand={item.brand} src={item.thumbnail} func={() => sigleProduct(item)} /> 
+                 <SingleCard key={item.id} title={item.title} description={item.description} price={item.price} category={item.category} brand={item.brand} src={item.thumbnail} func={() => sigleProduct(item)} /> 
             </div>
 
 

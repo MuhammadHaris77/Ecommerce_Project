@@ -53,20 +53,26 @@ const SingleProduct = () => {
 
       {
         data && <Container   >
-          <Card sx={{ display: 'flex', margin: "20px" }}>
+          <Card index={ data && data.id} sx={{ display: 'flex', margin: "20px" }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', }}>
               <CardContent>
-                <Typography gutterBottom variant="h2" component="div">
+                <Typography gutterBottom variant="h3" component="div">
                   {data && data.title}
                 </Typography>
-
-                <Typography variant="h4" sx={{ color: '#263238' }}>
-                  <b>Brand :</b>{data && data.brand}
+                <Typography variant="h6" sx={{ color: '#263238' }}>
+                  <b>Description :</b> {data && data.description}
                 </Typography>
                 <br />
-
                 <Typography variant="h5" sx={{ color: '#263238' }}>
-                  <b>Description :</b> {data && data.description}
+                  <b>Brand :</b>{data && data.brand}
+                </Typography>
+                <br />  
+                <Typography variant="h5" sx={{ color: '263238' }}>
+                  <b>Category :</b>  {data && data.category}
+                </Typography>
+                <br />
+                <Typography variant="h5" sx={{ color: 'red' }}>
+                  <b>Price : $</b>  {data && data.price}
                 </Typography>
                 <br />
 

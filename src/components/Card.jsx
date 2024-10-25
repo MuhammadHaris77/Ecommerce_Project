@@ -6,34 +6,35 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function SingleCard({ title, description, src ,brand,category,func}) {
+export default function SingleCard({ title, description, src ,brand,category,price,func}) {
     return (
-     <Card sx={{ maxWidth:320,height:400,margin:'4px'  }}>
+     <Card sx={{ width:290,height:450, padding:'3px',margin:'3px'  }} >
             <CardMedia
                 sx={{ height: 160 }}
                 image={src}
                 title="green iguana"
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="p" component="div">
                     {title}
                 </Typography>
                 <Typography variant="body2" sx={{ color: '#263238' }}>
+                   <b>Description :</b> {description && description.slice(0,20)}...
+                </Typography>
+                <Typography variant="body1" sx={{ color: '#263238' }}>
                     <b>Brand :</b>{brand}
+                </Typography>        
+                <Typography variant="body1" sx={{ color: '263238' }}>
+                  <b>Category :</b>  {category}
                 </Typography>
-       
-                <Typography variant="body2" sx={{ color: '#263238' }}>
-                   <b>Description :</b> {description && description.slice(0,60)}...
+                <Typography variant="h6" sx={{ color: 'red' }}>
+                  <b>Price : $</b>  {price}
                 </Typography>
-               
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    {category}
-                </Typography>
-       
             </CardContent>
             <CardActions sx={{justifyContent:'center'}}>
                 <Button variant="contained"  sx={{ color: 'white',background: '#bf360c' }} onClick={func} >Show More</Button>
             </CardActions>
+            <br />
         </Card>
 
 
