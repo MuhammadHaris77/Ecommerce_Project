@@ -10,6 +10,7 @@ import Products from './pages/Products.jsx'
 import Register from './pages/Register.jsx'
 import { Container } from '@mui/material'
 import { Typography } from '@mui/material'
+import ProtectedRoutes from './components/ProtectedRoutes.jsx'
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'products',
-        element: <Products />
+        element: <ProtectedRoutes component={<Products/>} />
       },
       {
         path: 'product/:id',

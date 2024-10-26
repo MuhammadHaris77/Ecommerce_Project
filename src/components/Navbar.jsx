@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,7 +14,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { getAuth, signOut } from "firebase/auth";
+import { Alert } from '@mui/material';
 const pages = ['login', 'register', 'products'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -21,6 +24,7 @@ function ResponsiveAppBar() {
 
  const [anchorElNav,setAnchorElNav]= React.useState(null)
  const [anchorElUser,setAnchorElUser]= React.useState(null)
+ const [alert, setAlert] =useState(false)
 
 
 
@@ -47,11 +51,31 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+// <<<<<<<<======== SIGN OUT AUTH FIREBASE=======>>>>>>>
+
+const logOutFunc=()=>{
+  const auth = getAuth();
+  signOut(auth).then(() => {
+    // Sign-out successful.
+    setAlert(true)
+    setTimeout(() => {
+      navigate('/');
+      
+    }, 1000);
+
+  }).catch((error) => {
+    // An error happened.
+
+  });
+  
+}
+
   return (
     <AppBar position="static" >
       <Container maxWidth="xl" sx={{background:'#bf360c'}}>
+
         <Toolbar disableGutters>
-         
+        <AddShoppingCartIcon/>
           <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', } }}>
             <IconButton
               size="large"
@@ -99,8 +123,13 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
+          <Button sx={{color:'white'}} onClick={logOutFunc} >LOGOUT </Button>
+
           </Toolbar>
+
       </Container>
+      {  alert  &&  <Alert severity="success">User Logout Succesfully!</Alert>}
+
     </AppBar>
   );
 }
