@@ -6,9 +6,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function SingleCard({ title, description, src ,brand,category,price,func}) {
+
+export default function SingleCard({ title, description, src ,brand,category,price,func,addToCart}) {
     return (
-     <Card sx={{ width:290,height:450, padding:'3px',margin:'3px'  }} >
+     <Card sx={{ width:320,height:420, padding:'3px',margin:'3px'  }} >
             <CardMedia
                 sx={{ height: 160 }}
                 image={src}
@@ -33,6 +34,8 @@ export default function SingleCard({ title, description, src ,brand,category,pri
             </CardContent>
             <CardActions sx={{justifyContent:'center'}}>
                 <Button variant="contained"  sx={{ color: 'white',background: '#bf360c' }} onClick={func} >Show More</Button>
+                <Button variant="contained"  sx={{ color: 'white',background: '#bf360c' }} onClick={addToCart} >Add to Cart</Button>
+
             </CardActions>
             <br />
         </Card>

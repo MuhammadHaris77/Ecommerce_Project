@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -17,16 +17,17 @@ import { useNavigate } from 'react-router-dom';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { getAuth, signOut } from "firebase/auth";
 import { Alert } from '@mui/material';
+import TemporaryDrawer from './Drawer';
+
 const pages = ['login', 'register', 'products'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+//const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
 
  const [anchorElNav,setAnchorElNav]= React.useState(null)
  const [anchorElUser,setAnchorElUser]= React.useState(null)
  const [alert, setAlert] =useState(false)
-
-
+ const [showDrawer,setshowDrawer] = useState(false)
 
 
 
@@ -71,6 +72,7 @@ const logOutFunc=()=>{
 }
 
   return (
+
     <AppBar position="static" >
       <Container maxWidth="xl" sx={{background:'#bf360c'}}>
 
@@ -123,13 +125,21 @@ const logOutFunc=()=>{
               </Button>
             ))}
           </Box>
-          <Button sx={{color:'white'}} onClick={logOutFunc} >LOGOUT </Button>
+          <Button sx={{color:'white'}} onClick={()=>{
+           console.log("open drawer")
+           setshowDrawer(true)
 
+          }} >
+ </Button>
+ 
+ <TemporaryDrawer/>
+          <Button sx={{color:'white'}} onClick={logOutFunc} >LOGOUT </Button>
+     
           </Toolbar>
 
       </Container>
       {  alert  &&  <Alert severity="success">User Logout Succesfully!</Alert>}
-
+      {showDrawer && <TemporaryDrawer/>}
     </AppBar>
   );
 }

@@ -6,13 +6,14 @@ import { auth, } from '../config/firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+
 const Register = () => {
   const email = useRef()
   const password = useRef()
   const navigate =useNavigate()
 
   const [alert, setAlert] =useState(false)
-  const [error,setError] = useState(false)
+  const [error,setError] = useState(null)
 
 
 
@@ -37,7 +38,7 @@ const Register = () => {
         const errorMessage = error.message;
         console.log('error', errorMessage)
         console.log(errorMessage)
-        setError(true)
+        setError(errorMessage)
 
 
       });
@@ -49,7 +50,8 @@ const Register = () => {
     <div className='text-center'>
       <ResponsiveAppBar />    
      {  alert  &&  <Alert severity="success">User Register Succesfully .</Alert>}
-     {  error  &&  <Alert severity="error">User Register Failed</Alert>}
+        
+        {  error  &&  <Alert severity="error">{error}</Alert>}
 
       <Container className='border border-slate-950  mt-4 p-4 text-center '  >
         <Typography className="text-center p-4" variant='h2' color='#bf360c'>

@@ -24,7 +24,7 @@ const ProtectedRoutes = ({ component }) => {
 
     }, [])
     return (
-        loading ? <div className='text-center'>
+        loading ? <div className='text-center mt-4'>
             <CircularProgress />
         </div> : component
     )

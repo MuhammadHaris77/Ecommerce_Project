@@ -13,7 +13,7 @@ import { Alert } from '@mui/material';
 const Login = () => {
 
   const [alert, setAlert] =useState(false)
-  const [error,setError] = useState(false)
+  const [error,setError] = useState(null)
   const email = useRef()
   const password = useRef()
   const navigate = useNavigate()
@@ -34,7 +34,7 @@ const Login = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setError(true)
+        setError(errorMessage)
       });
   }
 
@@ -43,7 +43,7 @@ const Login = () => {
    <div className='text-center'>
      <ResponsiveAppBar/>
      {  alert  &&  <Alert severity="success">User Login Succesfully!</Alert>}
-     {  error  &&  <Alert severity="error">Error Found in User Login!</Alert>}
+     {  error  &&  <Alert severity="error">{error}</Alert>}
 
      <Container className='border border-slate-950  mt-4 p-4 text-center '  >
       <Typography className="text-center p-4" variant='h2' color='#bf360c'>
