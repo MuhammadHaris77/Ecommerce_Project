@@ -73,7 +73,7 @@ const logOutFunc=()=>{
 
   return (
 
-    <AppBar position="static" >
+    <AppBar position="static"  >
       <Container maxWidth="xl" sx={{background:'#bf360c'}}>
 
         <Toolbar disableGutters>
